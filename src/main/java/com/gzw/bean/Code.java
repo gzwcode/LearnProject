@@ -1,7 +1,9 @@
 package com.gzw.bean;
 
 
-public class Code {
+import java.io.Serializable;
+
+public class Code implements Serializable{
 
     private String mobile;//手机号码
 

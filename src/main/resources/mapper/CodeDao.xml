@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.gzw.dao.CodeDao" >
+
     <resultMap id="codeMap" type="com.gzw.bean.Code">
         <result column="mobile" property="mobile" jdbcType="CHAR" />
         <result column="code" property="code" jdbcType="CHAR" />
@@ -14,4 +15,7 @@
   SELECT * from bp_ywk_code_tbl where mobile = #{mobile}
 </select>
 
+    <select id="selectCode" resultType="java.lang.String">
+        select mobile from bp_ywk_code_tbl where flag = #{flag} limit 1
+    </select>
 </mapper>

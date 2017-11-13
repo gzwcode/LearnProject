@@ -134,6 +134,14 @@
       <artifactId>mysql-connector-java</artifactId>
       <version>5.1.35</version>
     </dependency>
+
+    <!-- 阿里的druid dataSource -->
+    <dependency>
+      <groupId>com.alibaba</groupId>
+      <artifactId>druid</artifactId>
+      <version>1.0.0</version>
+    </dependency>
+
     <!-- 导入dbcp的jar包，用来在applicationContext.xml中配置数据库 -->
     <dependency>
       <groupId>commons-dbcp</groupId>
@@ -332,34 +340,15 @@
   </dependencies>
 
   <build>
-
-
-    <plugins>
-    <plugin>
-    <artifactId>maven-resources-plugin</artifactId>
-    <version>2.6</version>
-    <executions>
-      <execution>
-        <id>copy-xmls</id>
-        <phase>process-resources</phase>
-        <goals>
-          <goal>copy-resources</goal>
-        </goals>
-        <configuration>
-          <outputDirectory>${basedir}/target/classes</outputDirectory>
-          <resources>
-            <resource>
-              <directory>${basedir}/src/main/java</directory>
-              <includes>
-                <include>**/*.xml</include>
-              </includes>
-            </resource>
-          </resources>
-        </configuration>
-      </execution>
-    </executions>
-    </plugin>
-    </plugins>
+      <plugins>
+          <plugin>
+              <groupId>org.apache.maven.plugins</groupId>
+              <artifactId>maven-compiler-plugin</artifactId>
+              <configuration>
+                  <source>1.6</source>
+                  <target>1.6</target>
+              </configuration>
+          </plugin>
+      </plugins>
   </build>
-
 </project>

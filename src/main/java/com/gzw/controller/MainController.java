@@ -14,10 +14,14 @@ public class MainController {
     @Resource
     CodeService codeService;
 
+    @Resource
+    CodeDao CodeDao;
+
     @RequestMapping("/gobi")
     public String aa(){
 
-        System.out.println("访问");
+        String flag = CodeDao.selectCode("1");
+        System.out.println(flag);
         return "a";
     }
 
