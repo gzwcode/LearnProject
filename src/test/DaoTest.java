@@ -17,12 +17,18 @@ public class DaoTest {
     CodeDao CodeDao;
 
     @Resource
-    RedisPool RedisPool;
+    RedisPool redisPool;
     @Test
     public void ssss(){
-        RedisPool.set("asaf","fuck u ");
-        String aa = RedisPool.get("asaf");
-        System.out.println(aa);
+        String id ="1";
+        String value = redisPool.get("Code"+id);
+        if(value==null){//redis里没有记录
+            //从数据库里获取
+            String flag = CodeDao.selectCode("1");
+            redisPool.set("Code"+id,flag,30);
+            value = redisPool.get("Code"+id);
+        }
+        System.out.println(value);
     }
 
 

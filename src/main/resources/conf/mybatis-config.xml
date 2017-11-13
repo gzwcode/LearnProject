@@ -11,6 +11,8 @@
         <setting name="mapUnderscoreToCamelCase" value="true" />
         <!-- 全局映射器启用缓存 （为了使用redis）-->
         <setting name="cacheEnabled" value="true"/>
+        <!-- 输出sql的log日志-->
+        <!-- <setting name="logImpl" value="STDOUT_LOGGING"/>-->
 
-    </settings>
-</configuration>
+     </settings>
+ </configuration>
