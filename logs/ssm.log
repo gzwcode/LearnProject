@@ -510,4 +510,532 @@ Caused by: java.lang.IllegalArgumentException: Could not resolve resource locati
   [INFO] [2017-11-13 22:33:47][org.springframework.jdbc.support.SQLErrorCodesFactory]SQLErrorCodes loaded: [DB2, Derby, H2, HSQL, Informix, MS-SQL, MySQL, Oracle, PostgreSQL, Sybase]
   [INFO] [2017-11-13 22:33:47][org.springframework.context.support.GenericApplicationContext]Closing org.springframework.context.support.GenericApplicationContext@34171a9b: startup date [Mon Nov 13 22:33:43 CST 2017]; root of context hierarchy
   [INFO] [2017-11-13 22:33:47][com.alibaba.druid.pool.DruidDataSource]{dataSource-1} closed
+  [INFO] [2017-11-20 09:19:08][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [conf/spring.xml]
+  [INFO] [2017-11-20 09:19:08][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [conf/spring-mybatis.xml]
+  [INFO] [2017-11-20 09:19:08][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [conf/spring-redis.xml]
+  [INFO] [2017-11-20 09:19:08][org.springframework.context.support.GenericApplicationContext]Refreshing org.springframework.context.support.GenericApplicationContext@7afdc015: startup date [Mon Nov 20 09:19:08 GMT+08:00 2017]; root of context hierarchy
+  [INFO] [2017-11-20 09:19:09][org.springframework.context.support.PropertySourcesPlaceholderConfigurer]Loading properties file from class path resource [jdbc.properties]
+  [INFO] [2017-11-20 09:19:09][org.springframework.context.support.PropertySourcesPlaceholderConfigurer]Loading properties file from class path resource [redis.properties]
+  [INFO] [2017-11-20 09:19:09][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+  [ERROR] [2017-11-20 09:19:10][com.alibaba.druid.pool.DruidDataSource]init datasource error
+  java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:998)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3835)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3771)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:870)
+	at com.mysql.jdbc.MysqlIO.proceedHandshakeWithPluggableAuthentication(MysqlIO.java:1659)
+	at com.mysql.jdbc.MysqlIO.doHandshake(MysqlIO.java:1206)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2239)
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2270)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2069)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:794)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:44)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:389)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:399)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:325)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:146)
+	at com.alibaba.druid.filter.stat.StatFilter.connection_connect(StatFilter.java:211)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:140)
+	at com.alibaba.druid.filter.FilterAdapter.connection_connect(FilterAdapter.java:785)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:140)
+	at com.alibaba.druid.filter.FilterAdapter.connection_connect(FilterAdapter.java:785)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:140)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1355)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1409)
+	at com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:602)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeCustomInitMethod(AbstractAutowireCapableBeanFactory.java:1681)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1620)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1549)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:539)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:304)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:300)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:195)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:700)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:760)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:482)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:121)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:60)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.delegateLoading(AbstractDelegatingSmartContextLoader.java:100)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.loadContext(AbstractDelegatingSmartContextLoader.java:250)
+	at org.springframework.test.context.CacheAwareContextLoaderDelegate.loadContextInternal(CacheAwareContextLoaderDelegate.java:64)
+	at org.springframework.test.context.CacheAwareContextLoaderDelegate.loadContext(CacheAwareContextLoaderDelegate.java:91)
+	at org.springframework.test.context.DefaultTestContext.getApplicationContext(DefaultTestContext.java:101)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:109)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:75)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:319)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:212)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:291)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:232)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:89)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:71)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:175)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:160)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:68)
+	at com.intellij.rt.execution.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:47)
+	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:242)
+	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:70)
+[ERROR] [2017-11-20 09:19:10][com.alibaba.druid.pool.DruidDataSource]dataSource init error
+  java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:998)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3835)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3771)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:870)
+	at com.mysql.jdbc.MysqlIO.proceedHandshakeWithPluggableAuthentication(MysqlIO.java:1659)
+	at com.mysql.jdbc.MysqlIO.doHandshake(MysqlIO.java:1206)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2239)
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2270)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2069)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:794)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:44)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:389)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:399)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:325)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:146)
+	at com.alibaba.druid.filter.stat.StatFilter.connection_connect(StatFilter.java:211)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:140)
+	at com.alibaba.druid.filter.FilterAdapter.connection_connect(FilterAdapter.java:785)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:140)
+	at com.alibaba.druid.filter.FilterAdapter.connection_connect(FilterAdapter.java:785)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:140)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1355)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1409)
+	at com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:602)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeCustomInitMethod(AbstractAutowireCapableBeanFactory.java:1681)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1620)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1549)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:539)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:304)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:300)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:195)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:700)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:760)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:482)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:121)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:60)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.delegateLoading(AbstractDelegatingSmartContextLoader.java:100)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.loadContext(AbstractDelegatingSmartContextLoader.java:250)
+	at org.springframework.test.context.CacheAwareContextLoaderDelegate.loadContextInternal(CacheAwareContextLoaderDelegate.java:64)
+	at org.springframework.test.context.CacheAwareContextLoaderDelegate.loadContext(CacheAwareContextLoaderDelegate.java:91)
+	at org.springframework.test.context.DefaultTestContext.getApplicationContext(DefaultTestContext.java:101)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:109)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:75)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:319)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:212)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:291)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:232)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:89)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:71)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:175)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:160)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:68)
+	at com.intellij.rt.execution.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:47)
+	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:242)
+	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:70)
+[INFO] [2017-11-20 09:19:10][com.alibaba.druid.pool.DruidDataSource]{dataSource-1} inited
+  [ERROR] [2017-11-20 09:19:10][org.springframework.test.context.TestContextManager]Caught exception while allowing TestExecutionListener [org.springframework.test.context.support.DependencyInjectionTestExecutionListener@3b9649c6] to prepare test instance [DaoTest@7c584ba]
+  java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.CacheAwareContextLoaderDelegate.loadContext(CacheAwareContextLoaderDelegate.java:99)
+	at org.springframework.test.context.DefaultTestContext.getApplicationContext(DefaultTestContext.java:101)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:109)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:75)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:319)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:212)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:291)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:232)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:89)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:71)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:175)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:160)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:68)
+	at com.intellij.rt.execution.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:47)
+	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:242)
+	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:70)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [conf/spring-mybatis.xml]: Invocation of init method failed; nested exception is java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1553)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:539)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:304)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:300)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:195)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:700)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:760)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:482)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:121)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:60)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.delegateLoading(AbstractDelegatingSmartContextLoader.java:100)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.loadContext(AbstractDelegatingSmartContextLoader.java:250)
+	at org.springframework.test.context.CacheAwareContextLoaderDelegate.loadContextInternal(CacheAwareContextLoaderDelegate.java:64)
+	at org.springframework.test.context.CacheAwareContextLoaderDelegate.loadContext(CacheAwareContextLoaderDelegate.java:91)
+	... 24 more
+Caused by: java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:998)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3835)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3771)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:870)
+	at com.mysql.jdbc.MysqlIO.proceedHandshakeWithPluggableAuthentication(MysqlIO.java:1659)
+	at com.mysql.jdbc.MysqlIO.doHandshake(MysqlIO.java:1206)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2239)
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2270)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2069)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:794)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:44)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:389)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:399)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:325)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:146)
+	at com.alibaba.druid.filter.stat.StatFilter.connection_connect(StatFilter.java:211)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:140)
+	at com.alibaba.druid.filter.FilterAdapter.connection_connect(FilterAdapter.java:785)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:140)
+	at com.alibaba.druid.filter.FilterAdapter.connection_connect(FilterAdapter.java:785)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:140)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1355)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1409)
+	at com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:602)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeCustomInitMethod(AbstractAutowireCapableBeanFactory.java:1681)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1620)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1549)
+	... 39 more
+[INFO] [2017-11-20 09:19:35][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [conf/spring.xml]
+  [INFO] [2017-11-20 09:19:35][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [conf/spring-mybatis.xml]
+  [INFO] [2017-11-20 09:19:35][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [conf/spring-redis.xml]
+  [INFO] [2017-11-20 09:19:35][org.springframework.context.support.GenericApplicationContext]Refreshing org.springframework.context.support.GenericApplicationContext@5be470fd: startup date [Mon Nov 20 09:19:35 GMT+08:00 2017]; root of context hierarchy
+  [INFO] [2017-11-20 09:19:36][org.springframework.context.support.PropertySourcesPlaceholderConfigurer]Loading properties file from class path resource [jdbc.properties]
+  [INFO] [2017-11-20 09:19:36][org.springframework.context.support.PropertySourcesPlaceholderConfigurer]Loading properties file from class path resource [redis.properties]
+  [INFO] [2017-11-20 09:19:36][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+  [INFO] [2017-11-20 09:19:36][com.alibaba.druid.pool.DruidDataSource]{dataSource-1} inited
+  [INFO] [2017-11-20 09:19:37][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/user/gobi],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.gzw.controller.MainController.aa(java.lang.String)
+  [INFO] [2017-11-20 09:19:39][org.springframework.context.support.GenericApplicationContext]Closing org.springframework.context.support.GenericApplicationContext@5be470fd: startup date [Mon Nov 20 09:19:35 GMT+08:00 2017]; root of context hierarchy
+  [INFO] [2017-11-20 09:19:39][com.alibaba.druid.pool.DruidDataSource]{dataSource-1} closed
+  [INFO] [2017-11-20 09:24:33][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [conf/spring.xml]
+  [INFO] [2017-11-20 09:24:33][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [conf/spring-mybatis.xml]
+  [INFO] [2017-11-20 09:24:33][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [conf/spring-redis.xml]
+  [INFO] [2017-11-20 09:24:34][org.springframework.context.support.GenericApplicationContext]Refreshing org.springframework.context.support.GenericApplicationContext@44865ee: startup date [Mon Nov 20 09:24:34 GMT+08:00 2017]; root of context hierarchy
+  [INFO] [2017-11-20 09:24:34][org.springframework.context.support.PropertySourcesPlaceholderConfigurer]Loading properties file from class path resource [jdbc.properties]
+  [INFO] [2017-11-20 09:24:34][org.springframework.context.support.PropertySourcesPlaceholderConfigurer]Loading properties file from class path resource [redis.properties]
+  [INFO] [2017-11-20 09:24:34][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+  [INFO] [2017-11-20 09:24:36][com.alibaba.druid.pool.DruidDataSource]{dataSource-1} inited
+  [INFO] [2017-11-20 09:24:37][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/user/gobi],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.gzw.controller.MainController.aa(java.lang.String)
+  [INFO] [2017-11-20 09:24:39][org.springframework.context.support.GenericApplicationContext]Closing org.springframework.context.support.GenericApplicationContext@44865ee: startup date [Mon Nov 20 09:24:34 GMT+08:00 2017]; root of context hierarchy
+  [INFO] [2017-11-20 09:24:39][com.alibaba.druid.pool.DruidDataSource]{dataSource-1} closed
+  [INFO] [2017-11-20 09:25:24][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [conf/spring.xml]
+  [INFO] [2017-11-20 09:25:24][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [conf/spring-mybatis.xml]
+  [INFO] [2017-11-20 09:25:24][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [conf/spring-redis.xml]
+  [INFO] [2017-11-20 09:25:24][org.springframework.context.support.GenericApplicationContext]Refreshing org.springframework.context.support.GenericApplicationContext@4a17babb: startup date [Mon Nov 20 09:25:24 GMT+08:00 2017]; root of context hierarchy
+  [INFO] [2017-11-20 09:25:24][org.springframework.context.support.PropertySourcesPlaceholderConfigurer]Loading properties file from class path resource [jdbc.properties]
+  [INFO] [2017-11-20 09:25:24][org.springframework.context.support.PropertySourcesPlaceholderConfigurer]Loading properties file from class path resource [redis.properties]
+  [INFO] [2017-11-20 09:25:24][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+  [INFO] [2017-11-20 09:25:25][com.alibaba.druid.pool.DruidDataSource]{dataSource-1} inited
+  [INFO] [2017-11-20 09:25:26][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/user/gobi],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.gzw.controller.MainController.aa(java.lang.String)
+  [INFO] [2017-11-20 09:25:34][org.springframework.context.support.GenericApplicationContext]Closing org.springframework.context.support.GenericApplicationContext@4a17babb: startup date [Mon Nov 20 09:25:24 GMT+08:00 2017]; root of context hierarchy
+  [INFO] [2017-11-20 09:25:34][com.alibaba.druid.pool.DruidDataSource]{dataSource-1} closed
+  [INFO] [2017-11-22 12:13:10][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [conf/spring.xml]
+  [INFO] [2017-11-22 12:13:10][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [conf/spring-mybatis.xml]
+  [INFO] [2017-11-22 12:13:11][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [conf/spring-redis.xml]
+  [INFO] [2017-11-22 12:13:11][org.springframework.context.support.GenericApplicationContext]Refreshing org.springframework.context.support.GenericApplicationContext@4dfa3a9d: startup date [Wed Nov 22 12:13:11 GMT+08:00 2017]; root of context hierarchy
+  [INFO] [2017-11-22 12:13:11][org.springframework.context.support.PropertySourcesPlaceholderConfigurer]Loading properties file from class path resource [jdbc.properties]
+  [INFO] [2017-11-22 12:13:11][org.springframework.context.support.PropertySourcesPlaceholderConfigurer]Loading properties file from class path resource [redis.properties]
+  [INFO] [2017-11-22 12:13:11][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+  [INFO] [2017-11-22 12:13:14][com.alibaba.druid.pool.DruidDataSource]{dataSource-1} inited
+  [INFO] [2017-11-22 12:13:15][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/redis/select],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public com.alibaba.fastjson.JSONObject com.gzw.controller.RedisController.select(java.lang.String)
+  [INFO] [2017-11-22 12:13:16][org.springframework.context.support.GenericApplicationContext]Closing org.springframework.context.support.GenericApplicationContext@4dfa3a9d: startup date [Wed Nov 22 12:13:11 GMT+08:00 2017]; root of context hierarchy
+  [INFO] [2017-11-22 12:13:16][com.alibaba.druid.pool.DruidDataSource]{dataSource-1} closed
+  [INFO] [2017-11-22 12:13:52][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [conf/spring.xml]
+  [INFO] [2017-11-22 12:13:52][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [conf/spring-mybatis.xml]
+  [INFO] [2017-11-22 12:13:52][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [conf/spring-redis.xml]
+  [INFO] [2017-11-22 12:13:53][org.springframework.context.support.GenericApplicationContext]Refreshing org.springframework.context.support.GenericApplicationContext@4dfa3a9d: startup date [Wed Nov 22 12:13:53 GMT+08:00 2017]; root of context hierarchy
+  [INFO] [2017-11-22 12:13:53][org.springframework.context.support.PropertySourcesPlaceholderConfigurer]Loading properties file from class path resource [jdbc.properties]
+  [INFO] [2017-11-22 12:13:53][org.springframework.context.support.PropertySourcesPlaceholderConfigurer]Loading properties file from class path resource [redis.properties]
+  [INFO] [2017-11-22 12:13:53][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+  [INFO] [2017-11-22 12:13:53][com.alibaba.druid.pool.DruidDataSource]{dataSource-1} inited
+  [INFO] [2017-11-22 12:13:54][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/redis/select],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public com.alibaba.fastjson.JSONObject com.gzw.controller.RedisController.select(java.lang.String)
+  [INFO] [2017-11-22 12:13:55][org.springframework.context.support.GenericApplicationContext]Closing org.springframework.context.support.GenericApplicationContext@4dfa3a9d: startup date [Wed Nov 22 12:13:53 GMT+08:00 2017]; root of context hierarchy
+  [INFO] [2017-11-22 12:13:55][com.alibaba.druid.pool.DruidDataSource]{dataSource-1} closed
+  [INFO] [2017-11-22 12:25:13][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [conf/spring.xml]
+  [INFO] [2017-11-22 12:25:13][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [conf/spring-mybatis.xml]
+  [INFO] [2017-11-22 12:25:13][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [conf/spring-redis.xml]
+  [INFO] [2017-11-22 12:25:13][org.springframework.context.support.GenericApplicationContext]Refreshing org.springframework.context.support.GenericApplicationContext@4dfa3a9d: startup date [Wed Nov 22 12:25:13 GMT+08:00 2017]; root of context hierarchy
+  [INFO] [2017-11-22 12:25:13][org.springframework.context.support.PropertySourcesPlaceholderConfigurer]Loading properties file from class path resource [jdbc.properties]
+  [INFO] [2017-11-22 12:25:13][org.springframework.context.support.PropertySourcesPlaceholderConfigurer]Loading properties file from class path resource [redis.properties]
+  [INFO] [2017-11-22 12:25:13][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+  [INFO] [2017-11-22 12:25:14][com.alibaba.druid.pool.DruidDataSource]{dataSource-1} inited
+  [INFO] [2017-11-22 12:25:15][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/redis/select],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public com.alibaba.fastjson.JSONObject com.gzw.controller.RedisController.select(java.lang.String)
+  [INFO] [2017-11-22 12:25:16][org.springframework.context.support.GenericApplicationContext]Closing org.springframework.context.support.GenericApplicationContext@4dfa3a9d: startup date [Wed Nov 22 12:25:13 GMT+08:00 2017]; root of context hierarchy
+  [INFO] [2017-11-22 12:25:16][com.alibaba.druid.pool.DruidDataSource]{dataSource-1} closed
+  [INFO] [2017-11-22 12:25:43][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [conf/spring.xml]
+  [INFO] [2017-11-22 12:25:43][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [conf/spring-mybatis.xml]
+  [INFO] [2017-11-22 12:25:43][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [conf/spring-redis.xml]
+  [INFO] [2017-11-22 12:25:43][org.springframework.context.support.GenericApplicationContext]Refreshing org.springframework.context.support.GenericApplicationContext@4dfa3a9d: startup date [Wed Nov 22 12:25:43 GMT+08:00 2017]; root of context hierarchy
+  [INFO] [2017-11-22 12:25:44][org.springframework.context.support.PropertySourcesPlaceholderConfigurer]Loading properties file from class path resource [jdbc.properties]
+  [INFO] [2017-11-22 12:25:44][org.springframework.context.support.PropertySourcesPlaceholderConfigurer]Loading properties file from class path resource [redis.properties]
+  [INFO] [2017-11-22 12:25:44][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+  [INFO] [2017-11-22 12:25:44][com.alibaba.druid.pool.DruidDataSource]{dataSource-1} inited
+  [INFO] [2017-11-22 12:25:45][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/redis/select],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public com.alibaba.fastjson.JSONObject com.gzw.controller.RedisController.select(java.lang.String)
+  [INFO] [2017-11-22 12:25:45][org.springframework.context.support.GenericApplicationContext]Closing org.springframework.context.support.GenericApplicationContext@4dfa3a9d: startup date [Wed Nov 22 12:25:43 GMT+08:00 2017]; root of context hierarchy
+  [INFO] [2017-11-22 12:25:45][com.alibaba.druid.pool.DruidDataSource]{dataSource-1} closed
+  [INFO] [2017-11-22 12:30:56][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [conf/spring.xml]
+  [INFO] [2017-11-22 12:30:56][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [conf/spring-mybatis.xml]
+  [INFO] [2017-11-22 12:30:56][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [conf/spring-redis.xml]
+  [INFO] [2017-11-22 12:30:57][org.springframework.context.support.GenericApplicationContext]Refreshing org.springframework.context.support.GenericApplicationContext@4dfa3a9d: startup date [Wed Nov 22 12:30:57 GMT+08:00 2017]; root of context hierarchy
+  [INFO] [2017-11-22 12:30:57][org.springframework.context.support.PropertySourcesPlaceholderConfigurer]Loading properties file from class path resource [jdbc.properties]
+  [INFO] [2017-11-22 12:30:57][org.springframework.context.support.PropertySourcesPlaceholderConfigurer]Loading properties file from class path resource [redis.properties]
+  [INFO] [2017-11-22 12:30:57][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+  [INFO] [2017-11-22 12:30:58][com.alibaba.druid.pool.DruidDataSource]{dataSource-1} inited
+  [INFO] [2017-11-22 12:30:58][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/redis/select],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public com.alibaba.fastjson.JSONObject com.gzw.controller.RedisController.select(java.lang.String)
+  [INFO] [2017-11-22 12:30:59][org.springframework.context.support.GenericApplicationContext]Closing org.springframework.context.support.GenericApplicationContext@4dfa3a9d: startup date [Wed Nov 22 12:30:57 GMT+08:00 2017]; root of context hierarchy
+  [INFO] [2017-11-22 12:30:59][com.alibaba.druid.pool.DruidDataSource]{dataSource-1} closed
+  [INFO] [2017-11-22 12:32:03][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [conf/spring.xml]
+  [INFO] [2017-11-22 12:32:03][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [conf/spring-mybatis.xml]
+  [INFO] [2017-11-22 12:32:04][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [conf/spring-redis.xml]
+  [INFO] [2017-11-22 12:32:04][org.springframework.context.support.GenericApplicationContext]Refreshing org.springframework.context.support.GenericApplicationContext@4dfa3a9d: startup date [Wed Nov 22 12:32:04 GMT+08:00 2017]; root of context hierarchy
+  [INFO] [2017-11-22 12:32:04][org.springframework.context.support.PropertySourcesPlaceholderConfigurer]Loading properties file from class path resource [jdbc.properties]
+  [INFO] [2017-11-22 12:32:04][org.springframework.context.support.PropertySourcesPlaceholderConfigurer]Loading properties file from class path resource [redis.properties]
+  [INFO] [2017-11-22 12:32:04][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+  [INFO] [2017-11-22 12:32:05][com.alibaba.druid.pool.DruidDataSource]{dataSource-1} inited
+  [INFO] [2017-11-22 12:32:05][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/redis/select],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public com.alibaba.fastjson.JSONObject com.gzw.controller.RedisController.select(java.lang.String)
+  [INFO] [2017-11-22 12:32:06][org.springframework.context.support.GenericApplicationContext]Closing org.springframework.context.support.GenericApplicationContext@4dfa3a9d: startup date [Wed Nov 22 12:32:04 GMT+08:00 2017]; root of context hierarchy
+  [INFO] [2017-11-22 12:32:06][com.alibaba.druid.pool.DruidDataSource]{dataSource-1} closed
+  [INFO] [2017-11-22 12:39:36][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [conf/spring.xml]
+  [INFO] [2017-11-22 12:39:36][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [conf/spring-mybatis.xml]
+  [INFO] [2017-11-22 12:39:36][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [conf/spring-redis.xml]
+  [INFO] [2017-11-22 12:39:36][org.springframework.context.support.GenericApplicationContext]Refreshing org.springframework.context.support.GenericApplicationContext@4dfa3a9d: startup date [Wed Nov 22 12:39:36 GMT+08:00 2017]; root of context hierarchy
+  [INFO] [2017-11-22 12:39:37][org.springframework.context.support.PropertySourcesPlaceholderConfigurer]Loading properties file from class path resource [jdbc.properties]
+  [INFO] [2017-11-22 12:39:37][org.springframework.context.support.PropertySourcesPlaceholderConfigurer]Loading properties file from class path resource [redis.properties]
+  [INFO] [2017-11-22 12:39:37][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+  [INFO] [2017-11-22 12:39:37][com.alibaba.druid.pool.DruidDataSource]{dataSource-1} inited
+  [INFO] [2017-11-22 12:39:38][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/redis/select],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public com.alibaba.fastjson.JSONObject com.gzw.controller.RedisController.select(java.lang.String)
+  [INFO] [2017-11-22 12:39:38][org.springframework.context.support.GenericApplicationContext]Closing org.springframework.context.support.GenericApplicationContext@4dfa3a9d: startup date [Wed Nov 22 12:39:36 GMT+08:00 2017]; root of context hierarchy
+  [INFO] [2017-11-22 12:39:38][com.alibaba.druid.pool.DruidDataSource]{dataSource-1} closed
+  [INFO] [2017-11-22 12:39:59][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [conf/spring.xml]
+  [INFO] [2017-11-22 12:39:59][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [conf/spring-mybatis.xml]
+  [INFO] [2017-11-22 12:39:59][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [conf/spring-redis.xml]
+  [INFO] [2017-11-22 12:40:00][org.springframework.context.support.GenericApplicationContext]Refreshing org.springframework.context.support.GenericApplicationContext@4dfa3a9d: startup date [Wed Nov 22 12:40:00 GMT+08:00 2017]; root of context hierarchy
+  [INFO] [2017-11-22 12:40:00][org.springframework.context.support.PropertySourcesPlaceholderConfigurer]Loading properties file from class path resource [jdbc.properties]
+  [INFO] [2017-11-22 12:40:00][org.springframework.context.support.PropertySourcesPlaceholderConfigurer]Loading properties file from class path resource [redis.properties]
+  [INFO] [2017-11-22 12:40:00][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+  [INFO] [2017-11-22 12:40:00][com.alibaba.druid.pool.DruidDataSource]{dataSource-1} inited
+  [INFO] [2017-11-22 12:40:01][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/redis/select],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public com.alibaba.fastjson.JSONObject com.gzw.controller.RedisController.select(java.lang.String)
+  [INFO] [2017-11-22 12:40:01][org.springframework.context.support.GenericApplicationContext]Closing org.springframework.context.support.GenericApplicationContext@4dfa3a9d: startup date [Wed Nov 22 12:40:00 GMT+08:00 2017]; root of context hierarchy
+  [INFO] [2017-11-22 12:40:01][com.alibaba.druid.pool.DruidDataSource]{dataSource-1} closed
+  [INFO] [2017-11-22 12:41:53][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [conf/spring.xml]
+  [INFO] [2017-11-22 12:41:54][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [conf/spring-mybatis.xml]
+  [INFO] [2017-11-22 12:41:54][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [conf/spring-redis.xml]
+  [INFO] [2017-11-22 12:41:54][org.springframework.context.support.GenericApplicationContext]Refreshing org.springframework.context.support.GenericApplicationContext@4dfa3a9d: startup date [Wed Nov 22 12:41:54 GMT+08:00 2017]; root of context hierarchy
+  [INFO] [2017-11-22 12:41:54][org.springframework.context.support.PropertySourcesPlaceholderConfigurer]Loading properties file from class path resource [jdbc.properties]
+  [INFO] [2017-11-22 12:41:54][org.springframework.context.support.PropertySourcesPlaceholderConfigurer]Loading properties file from class path resource [redis.properties]
+  [INFO] [2017-11-22 12:41:54][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+  [INFO] [2017-11-22 12:41:55][com.alibaba.druid.pool.DruidDataSource]{dataSource-1} inited
+  [INFO] [2017-11-22 12:41:55][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/redis/select],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public com.alibaba.fastjson.JSONObject com.gzw.controller.RedisController.select(java.lang.String)
+  [INFO] [2017-11-22 12:41:56][org.springframework.context.support.GenericApplicationContext]Closing org.springframework.context.support.GenericApplicationContext@4dfa3a9d: startup date [Wed Nov 22 12:41:54 GMT+08:00 2017]; root of context hierarchy
+  [INFO] [2017-11-22 12:41:56][com.alibaba.druid.pool.DruidDataSource]{dataSource-1} closed
+  [INFO] [2017-11-22 12:42:03][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [conf/spring.xml]
+  [INFO] [2017-11-22 12:42:03][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [conf/spring-mybatis.xml]
+  [INFO] [2017-11-22 12:42:03][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [conf/spring-redis.xml]
+  [INFO] [2017-11-22 12:42:03][org.springframework.context.support.GenericApplicationContext]Refreshing org.springframework.context.support.GenericApplicationContext@53b32d7: startup date [Wed Nov 22 12:42:03 GMT+08:00 2017]; root of context hierarchy
+  [INFO] [2017-11-22 12:42:04][org.springframework.context.support.PropertySourcesPlaceholderConfigurer]Loading properties file from class path resource [jdbc.properties]
+  [INFO] [2017-11-22 12:42:04][org.springframework.context.support.PropertySourcesPlaceholderConfigurer]Loading properties file from class path resource [redis.properties]
+  [INFO] [2017-11-22 12:42:04][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+  [INFO] [2017-11-22 12:42:04][com.alibaba.druid.pool.DruidDataSource]{dataSource-1} inited
+  [INFO] [2017-11-22 12:42:05][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/redis/select],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public com.alibaba.fastjson.JSONObject com.gzw.controller.RedisController.select(java.lang.String)
+  [INFO] [2017-11-22 12:42:05][org.springframework.context.support.GenericApplicationContext]Closing org.springframework.context.support.GenericApplicationContext@53b32d7: startup date [Wed Nov 22 12:42:03 GMT+08:00 2017]; root of context hierarchy
+  [INFO] [2017-11-22 12:42:05][com.alibaba.druid.pool.DruidDataSource]{dataSource-1} closed
+  [INFO] [2017-11-22 12:49:59][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [conf/spring.xml]
+  [INFO] [2017-11-22 12:49:59][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [conf/spring-mybatis.xml]
+  [INFO] [2017-11-22 12:49:59][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [conf/spring-redis.xml]
+  [INFO] [2017-11-22 12:50:00][org.springframework.context.support.GenericApplicationContext]Refreshing org.springframework.context.support.GenericApplicationContext@4dfa3a9d: startup date [Wed Nov 22 12:50:00 GMT+08:00 2017]; root of context hierarchy
+  [INFO] [2017-11-22 12:50:00][org.springframework.context.support.PropertySourcesPlaceholderConfigurer]Loading properties file from class path resource [jdbc.properties]
+  [INFO] [2017-11-22 12:50:00][org.springframework.context.support.PropertySourcesPlaceholderConfigurer]Loading properties file from class path resource [redis.properties]
+  [INFO] [2017-11-22 12:50:00][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+  [INFO] [2017-11-22 12:50:00][com.alibaba.druid.pool.DruidDataSource]{dataSource-1} inited
+  [INFO] [2017-11-22 12:50:01][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/redis/select],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public com.alibaba.fastjson.JSONObject com.gzw.controller.RedisController.select(java.lang.String)
+  [INFO] [2017-11-22 12:50:01][org.springframework.context.support.GenericApplicationContext]Closing org.springframework.context.support.GenericApplicationContext@4dfa3a9d: startup date [Wed Nov 22 12:50:00 GMT+08:00 2017]; root of context hierarchy
+  [INFO] [2017-11-22 12:50:01][com.alibaba.druid.pool.DruidDataSource]{dataSource-1} closed
+  [INFO] [2017-11-22 12:51:10][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [conf/spring.xml]
+  [INFO] [2017-11-22 12:51:10][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [conf/spring-mybatis.xml]
+  [INFO] [2017-11-22 12:51:11][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [conf/spring-redis.xml]
+  [INFO] [2017-11-22 12:51:11][org.springframework.context.support.GenericApplicationContext]Refreshing org.springframework.context.support.GenericApplicationContext@4dfa3a9d: startup date [Wed Nov 22 12:51:11 GMT+08:00 2017]; root of context hierarchy
+  [INFO] [2017-11-22 12:51:11][org.springframework.context.support.PropertySourcesPlaceholderConfigurer]Loading properties file from class path resource [jdbc.properties]
+  [INFO] [2017-11-22 12:51:11][org.springframework.context.support.PropertySourcesPlaceholderConfigurer]Loading properties file from class path resource [redis.properties]
+  [INFO] [2017-11-22 12:51:11][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+  [INFO] [2017-11-22 12:51:12][com.alibaba.druid.pool.DruidDataSource]{dataSource-1} inited
+  [INFO] [2017-11-22 12:51:12][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/redis/select],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public com.alibaba.fastjson.JSONObject com.gzw.controller.RedisController.select(java.lang.String)
+  [INFO] [2017-11-22 12:51:13][org.springframework.context.support.GenericApplicationContext]Closing org.springframework.context.support.GenericApplicationContext@4dfa3a9d: startup date [Wed Nov 22 12:51:11 GMT+08:00 2017]; root of context hierarchy
+  [INFO] [2017-11-22 12:51:13][com.alibaba.druid.pool.DruidDataSource]{dataSource-1} closed
+  [INFO] [2017-11-22 12:51:26][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [conf/spring.xml]
+  [INFO] [2017-11-22 12:51:27][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [conf/spring-mybatis.xml]
+  [INFO] [2017-11-22 12:51:27][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [conf/spring-redis.xml]
+  [INFO] [2017-11-22 12:51:27][org.springframework.context.support.GenericApplicationContext]Refreshing org.springframework.context.support.GenericApplicationContext@4dfa3a9d: startup date [Wed Nov 22 12:51:27 GMT+08:00 2017]; root of context hierarchy
+  [INFO] [2017-11-22 12:51:27][org.springframework.context.support.PropertySourcesPlaceholderConfigurer]Loading properties file from class path resource [jdbc.properties]
+  [INFO] [2017-11-22 12:51:27][org.springframework.context.support.PropertySourcesPlaceholderConfigurer]Loading properties file from class path resource [redis.properties]
+  [INFO] [2017-11-22 12:51:27][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+  [INFO] [2017-11-22 12:51:28][com.alibaba.druid.pool.DruidDataSource]{dataSource-1} inited
+  [INFO] [2017-11-22 12:51:28][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/redis/select],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public com.alibaba.fastjson.JSONObject com.gzw.controller.RedisController.select(java.lang.String)
+  [INFO] [2017-11-22 12:51:29][org.springframework.context.support.GenericApplicationContext]Closing org.springframework.context.support.GenericApplicationContext@4dfa3a9d: startup date [Wed Nov 22 12:51:27 GMT+08:00 2017]; root of context hierarchy
+  [INFO] [2017-11-22 12:51:29][com.alibaba.druid.pool.DruidDataSource]{dataSource-1} closed
+  [INFO] [2017-11-22 15:35:18][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [conf/spring.xml]
+  [INFO] [2017-11-22 15:35:19][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [conf/spring-mybatis.xml]
+  [INFO] [2017-11-22 15:35:20][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [conf/spring-redis.xml]
+  [INFO] [2017-11-22 15:35:21][org.springframework.context.support.GenericApplicationContext]Refreshing org.springframework.context.support.GenericApplicationContext@4dfa3a9d: startup date [Wed Nov 22 15:35:20 GMT+08:00 2017]; root of context hierarchy
+  [INFO] [2017-11-22 15:35:22][org.springframework.context.support.PropertySourcesPlaceholderConfigurer]Loading properties file from class path resource [jdbc.properties]
+  [INFO] [2017-11-22 15:35:22][org.springframework.context.support.PropertySourcesPlaceholderConfigurer]Loading properties file from class path resource [redis.properties]
+  [INFO] [2017-11-22 15:35:22][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+  [INFO] [2017-11-22 15:35:26][com.alibaba.druid.pool.DruidDataSource]{dataSource-1} inited
+  [INFO] [2017-11-22 15:35:27][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/redis/select],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public com.alibaba.fastjson.JSONObject com.gzw.controller.RedisController.select(java.lang.String)
+  [INFO] [2017-11-22 15:35:29][org.springframework.context.support.GenericApplicationContext]Closing org.springframework.context.support.GenericApplicationContext@4dfa3a9d: startup date [Wed Nov 22 15:35:20 GMT+08:00 2017]; root of context hierarchy
+  [INFO] [2017-11-22 15:35:30][com.alibaba.druid.pool.DruidDataSource]{dataSource-1} closed
+  [INFO] [2017-11-22 15:35:45][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [conf/spring.xml]
+  [INFO] [2017-11-22 15:35:45][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [conf/spring-mybatis.xml]
+  [INFO] [2017-11-22 15:35:45][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [conf/spring-redis.xml]
+  [INFO] [2017-11-22 15:35:45][org.springframework.context.support.GenericApplicationContext]Refreshing org.springframework.context.support.GenericApplicationContext@4dfa3a9d: startup date [Wed Nov 22 15:35:45 GMT+08:00 2017]; root of context hierarchy
+  [INFO] [2017-11-22 15:35:45][org.springframework.context.support.PropertySourcesPlaceholderConfigurer]Loading properties file from class path resource [jdbc.properties]
+  [INFO] [2017-11-22 15:35:45][org.springframework.context.support.PropertySourcesPlaceholderConfigurer]Loading properties file from class path resource [redis.properties]
+  [INFO] [2017-11-22 15:35:45][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+  [INFO] [2017-11-22 15:35:46][com.alibaba.druid.pool.DruidDataSource]{dataSource-1} inited
+  [INFO] [2017-11-22 15:35:47][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/redis/select],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public com.alibaba.fastjson.JSONObject com.gzw.controller.RedisController.select(java.lang.String)
+  [INFO] [2017-11-22 15:35:47][org.springframework.context.support.GenericApplicationContext]Closing org.springframework.context.support.GenericApplicationContext@4dfa3a9d: startup date [Wed Nov 22 15:35:45 GMT+08:00 2017]; root of context hierarchy
+  [INFO] [2017-11-22 15:35:47][com.alibaba.druid.pool.DruidDataSource]{dataSource-1} closed
+  [INFO] [2017-11-22 15:36:04][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [conf/spring.xml]
+  [INFO] [2017-11-22 15:36:04][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [conf/spring-mybatis.xml]
+  [INFO] [2017-11-22 15:36:04][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [conf/spring-redis.xml]
+  [INFO] [2017-11-22 15:36:05][org.springframework.context.support.GenericApplicationContext]Refreshing org.springframework.context.support.GenericApplicationContext@4dfa3a9d: startup date [Wed Nov 22 15:36:05 GMT+08:00 2017]; root of context hierarchy
+  [INFO] [2017-11-22 15:36:05][org.springframework.context.support.PropertySourcesPlaceholderConfigurer]Loading properties file from class path resource [jdbc.properties]
+  [INFO] [2017-11-22 15:36:05][org.springframework.context.support.PropertySourcesPlaceholderConfigurer]Loading properties file from class path resource [redis.properties]
+  [INFO] [2017-11-22 15:36:05][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+  [INFO] [2017-11-22 15:36:05][com.alibaba.druid.pool.DruidDataSource]{dataSource-1} inited
+  [INFO] [2017-11-22 15:36:06][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/redis/select],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public com.alibaba.fastjson.JSONObject com.gzw.controller.RedisController.select(java.lang.String)
+  [INFO] [2017-11-22 15:36:06][org.springframework.context.support.GenericApplicationContext]Closing org.springframework.context.support.GenericApplicationContext@4dfa3a9d: startup date [Wed Nov 22 15:36:05 GMT+08:00 2017]; root of context hierarchy
+  [INFO] [2017-11-22 15:36:06][com.alibaba.druid.pool.DruidDataSource]{dataSource-1} closed
+  [INFO] [2017-11-22 15:36:17][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [conf/spring.xml]
+  [INFO] [2017-11-22 15:36:17][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [conf/spring-mybatis.xml]
+  [INFO] [2017-11-22 15:36:17][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [conf/spring-redis.xml]
+  [INFO] [2017-11-22 15:36:17][org.springframework.context.support.GenericApplicationContext]Refreshing org.springframework.context.support.GenericApplicationContext@4dfa3a9d: startup date [Wed Nov 22 15:36:17 GMT+08:00 2017]; root of context hierarchy
+  [INFO] [2017-11-22 15:36:17][org.springframework.context.support.PropertySourcesPlaceholderConfigurer]Loading properties file from class path resource [jdbc.properties]
+  [INFO] [2017-11-22 15:36:17][org.springframework.context.support.PropertySourcesPlaceholderConfigurer]Loading properties file from class path resource [redis.properties]
+  [INFO] [2017-11-22 15:36:17][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+  [INFO] [2017-11-22 15:36:18][com.alibaba.druid.pool.DruidDataSource]{dataSource-1} inited
+  [INFO] [2017-11-22 15:36:19][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/redis/select],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public com.alibaba.fastjson.JSONObject com.gzw.controller.RedisController.select(java.lang.String)
+  [INFO] [2017-11-22 15:36:19][org.springframework.context.support.GenericApplicationContext]Closing org.springframework.context.support.GenericApplicationContext@4dfa3a9d: startup date [Wed Nov 22 15:36:17 GMT+08:00 2017]; root of context hierarchy
+  [INFO] [2017-11-22 15:36:19][com.alibaba.druid.pool.DruidDataSource]{dataSource-1} closed
+  [INFO] [2017-11-22 15:36:33][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [conf/spring.xml]
+  [INFO] [2017-11-22 15:36:33][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [conf/spring-mybatis.xml]
+  [INFO] [2017-11-22 15:36:33][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [conf/spring-redis.xml]
+  [INFO] [2017-11-22 15:36:33][org.springframework.context.support.GenericApplicationContext]Refreshing org.springframework.context.support.GenericApplicationContext@4dfa3a9d: startup date [Wed Nov 22 15:36:33 GMT+08:00 2017]; root of context hierarchy
+  [INFO] [2017-11-22 15:36:33][org.springframework.context.support.PropertySourcesPlaceholderConfigurer]Loading properties file from class path resource [jdbc.properties]
+  [INFO] [2017-11-22 15:36:33][org.springframework.context.support.PropertySourcesPlaceholderConfigurer]Loading properties file from class path resource [redis.properties]
+  [INFO] [2017-11-22 15:36:33][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+  [INFO] [2017-11-22 15:36:34][com.alibaba.druid.pool.DruidDataSource]{dataSource-1} inited
+  [INFO] [2017-11-22 15:36:34][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/redis/select],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public com.alibaba.fastjson.JSONObject com.gzw.controller.RedisController.select(java.lang.String)
+  [INFO] [2017-11-22 15:36:35][org.springframework.context.support.GenericApplicationContext]Closing org.springframework.context.support.GenericApplicationContext@4dfa3a9d: startup date [Wed Nov 22 15:36:33 GMT+08:00 2017]; root of context hierarchy
+  [INFO] [2017-11-22 15:36:35][com.alibaba.druid.pool.DruidDataSource]{dataSource-1} closed
+  [INFO] [2017-11-22 15:36:48][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [conf/spring.xml]
+  [INFO] [2017-11-22 15:36:48][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [conf/spring-mybatis.xml]
+  [INFO] [2017-11-22 15:36:48][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [conf/spring-redis.xml]
+  [INFO] [2017-11-22 15:36:48][org.springframework.context.support.GenericApplicationContext]Refreshing org.springframework.context.support.GenericApplicationContext@4dfa3a9d: startup date [Wed Nov 22 15:36:48 GMT+08:00 2017]; root of context hierarchy
+  [INFO] [2017-11-22 15:36:49][org.springframework.context.support.PropertySourcesPlaceholderConfigurer]Loading properties file from class path resource [jdbc.properties]
+  [INFO] [2017-11-22 15:36:49][org.springframework.context.support.PropertySourcesPlaceholderConfigurer]Loading properties file from class path resource [redis.properties]
+  [INFO] [2017-11-22 15:36:49][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+  [INFO] [2017-11-22 15:36:49][com.alibaba.druid.pool.DruidDataSource]{dataSource-1} inited
+  [INFO] [2017-11-22 15:36:50][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/redis/select],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public com.alibaba.fastjson.JSONObject com.gzw.controller.RedisController.select(java.lang.String)
+  [INFO] [2017-11-22 15:36:50][org.springframework.context.support.GenericApplicationContext]Closing org.springframework.context.support.GenericApplicationContext@4dfa3a9d: startup date [Wed Nov 22 15:36:48 GMT+08:00 2017]; root of context hierarchy
+  [INFO] [2017-11-22 15:36:50][com.alibaba.druid.pool.DruidDataSource]{dataSource-1} closed
+  [INFO] [2017-11-22 15:37:02][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [conf/spring.xml]
+  [INFO] [2017-11-22 15:37:03][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [conf/spring-mybatis.xml]
+  [INFO] [2017-11-22 15:37:03][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [conf/spring-redis.xml]
+  [INFO] [2017-11-22 15:37:03][org.springframework.context.support.GenericApplicationContext]Refreshing org.springframework.context.support.GenericApplicationContext@4dfa3a9d: startup date [Wed Nov 22 15:37:03 GMT+08:00 2017]; root of context hierarchy
+  [INFO] [2017-11-22 15:37:03][org.springframework.context.support.PropertySourcesPlaceholderConfigurer]Loading properties file from class path resource [jdbc.properties]
+  [INFO] [2017-11-22 15:37:03][org.springframework.context.support.PropertySourcesPlaceholderConfigurer]Loading properties file from class path resource [redis.properties]
+  [INFO] [2017-11-22 15:37:03][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+  [INFO] [2017-11-22 15:37:04][com.alibaba.druid.pool.DruidDataSource]{dataSource-1} inited
+  [INFO] [2017-11-22 15:37:04][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/redis/select],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public com.alibaba.fastjson.JSONObject com.gzw.controller.RedisController.select(java.lang.String)
+  [INFO] [2017-11-22 15:37:05][org.springframework.context.support.GenericApplicationContext]Closing org.springframework.context.support.GenericApplicationContext@4dfa3a9d: startup date [Wed Nov 22 15:37:03 GMT+08:00 2017]; root of context hierarchy
+  [INFO] [2017-11-22 15:37:05][com.alibaba.druid.pool.DruidDataSource]{dataSource-1} closed
+  [INFO] [2017-11-22 15:37:10][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [conf/spring.xml]
+  [INFO] [2017-11-22 15:37:11][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [conf/spring-mybatis.xml]
+  [INFO] [2017-11-22 15:37:11][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [conf/spring-redis.xml]
+  [INFO] [2017-11-22 15:37:11][org.springframework.context.support.GenericApplicationContext]Refreshing org.springframework.context.support.GenericApplicationContext@4dfa3a9d: startup date [Wed Nov 22 15:37:11 GMT+08:00 2017]; root of context hierarchy
+  [INFO] [2017-11-22 15:37:11][org.springframework.context.support.PropertySourcesPlaceholderConfigurer]Loading properties file from class path resource [jdbc.properties]
+  [INFO] [2017-11-22 15:37:11][org.springframework.context.support.PropertySourcesPlaceholderConfigurer]Loading properties file from class path resource [redis.properties]
+  [INFO] [2017-11-22 15:37:11][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+  [INFO] [2017-11-22 15:37:12][com.alibaba.druid.pool.DruidDataSource]{dataSource-1} inited
+  [INFO] [2017-11-22 15:37:12][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/redis/select],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public com.alibaba.fastjson.JSONObject com.gzw.controller.RedisController.select(java.lang.String)
+  [INFO] [2017-11-22 15:37:13][org.springframework.context.support.GenericApplicationContext]Closing org.springframework.context.support.GenericApplicationContext@4dfa3a9d: startup date [Wed Nov 22 15:37:11 GMT+08:00 2017]; root of context hierarchy
+  [INFO] [2017-11-22 15:37:13][com.alibaba.druid.pool.DruidDataSource]{dataSource-1} closed
+  [INFO] [2017-11-22 15:47:31][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [conf/spring.xml]
+  [INFO] [2017-11-22 15:47:32][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [conf/spring-mybatis.xml]
+  [INFO] [2017-11-22 15:47:32][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [conf/spring-redis.xml]
+  [INFO] [2017-11-22 15:47:32][org.springframework.context.support.GenericApplicationContext]Refreshing org.springframework.context.support.GenericApplicationContext@598067a5: startup date [Wed Nov 22 15:47:32 GMT+08:00 2017]; root of context hierarchy
+  [INFO] [2017-11-22 15:47:32][org.springframework.context.support.PropertySourcesPlaceholderConfigurer]Loading properties file from class path resource [jdbc.properties]
+  [INFO] [2017-11-22 15:47:32][org.springframework.context.support.PropertySourcesPlaceholderConfigurer]Loading properties file from class path resource [redis.properties]
+  [INFO] [2017-11-22 15:47:32][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+  [INFO] [2017-11-22 15:47:33][com.alibaba.druid.pool.DruidDataSource]{dataSource-1} inited
+  [INFO] [2017-11-22 15:47:33][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/redis/select],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public com.alibaba.fastjson.JSONObject com.gzw.controller.RedisController.select(java.lang.String)
+  [INFO] [2017-11-22 15:47:34][org.springframework.context.support.GenericApplicationContext]Closing org.springframework.context.support.GenericApplicationContext@598067a5: startup date [Wed Nov 22 15:47:32 GMT+08:00 2017]; root of context hierarchy
+  [INFO] [2017-11-22 15:47:34][com.alibaba.druid.pool.DruidDataSource]{dataSource-1} closed
+  [INFO] [2017-11-22 15:47:55][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [conf/spring.xml]
+  [INFO] [2017-11-22 15:47:55][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [conf/spring-mybatis.xml]
+  [INFO] [2017-11-22 15:47:55][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [conf/spring-redis.xml]
+  [INFO] [2017-11-22 15:47:55][org.springframework.context.support.GenericApplicationContext]Refreshing org.springframework.context.support.GenericApplicationContext@598067a5: startup date [Wed Nov 22 15:47:55 GMT+08:00 2017]; root of context hierarchy
+  [INFO] [2017-11-22 15:47:55][org.springframework.context.support.PropertySourcesPlaceholderConfigurer]Loading properties file from class path resource [jdbc.properties]
+  [INFO] [2017-11-22 15:47:55][org.springframework.context.support.PropertySourcesPlaceholderConfigurer]Loading properties file from class path resource [redis.properties]
+  [INFO] [2017-11-22 15:47:55][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+  [INFO] [2017-11-22 15:47:56][com.alibaba.druid.pool.DruidDataSource]{dataSource-1} inited
+  [INFO] [2017-11-22 15:47:57][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/redis/select],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public com.alibaba.fastjson.JSONObject com.gzw.controller.RedisController.select(java.lang.String)
+  [INFO] [2017-11-22 15:47:57][org.springframework.context.support.GenericApplicationContext]Closing org.springframework.context.support.GenericApplicationContext@598067a5: startup date [Wed Nov 22 15:47:55 GMT+08:00 2017]; root of context hierarchy
+  [INFO] [2017-11-22 15:47:57][com.alibaba.druid.pool.DruidDataSource]{dataSource-1} closed
   

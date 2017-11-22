@@ -3,7 +3,7 @@ package com.gzw.utils;
 import java.io.*;
 
 /**
- *
+ * @author :龚增伟
  * @Description: 序列化反序列化工具
  */
 public class SerializeUtil {

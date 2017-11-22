@@ -2,6 +2,7 @@ package com.gzw.redis;
 
 
 /**
+ * @author :龚增伟
  * Redis工具接口
  *
  */

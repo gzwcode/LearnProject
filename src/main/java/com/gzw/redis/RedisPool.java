@@ -6,7 +6,8 @@ import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;
 
 /**
- * Redis连接池工具类
+ * @author: 龚增伟
+ * @desce:  jedis的连接池
  */
 public class RedisPool implements RedisUtil {
 
@@ -35,7 +36,6 @@ public class RedisPool implements RedisUtil {
         //查询
         Jedis jedis = this.getJedis();
         byte[] result = jedis.get(key.getBytes());
-
         //如果查询没有为空
         if(null == result){
             return null;
